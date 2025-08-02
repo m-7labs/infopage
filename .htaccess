@@ -1,0 +1,279 @@
+# ------------------------------------------------------------------------------
+
+# | Apache .htaccess Configuration for Wikipedia-style HTML Landing Page       |
+
+# ------------------------------------------------------------------------------
+
+# This file provides comprehensive server configurations for URL routing
+
+# security, performance, and SEO. It is optimized for Apache web servers and
+
+# shared hosting environments
+
+# ------------------------------------------------------------------------------
+
+# | Core Settings                                                              |
+
+# ------------------------------------------------------------------------------
+
+# Prevent directory listings
+
+Options -Indexes
+
+# Follow symbolic links (required for mod_rewrite to work)
+
+Options +FollowSymLinks
+
+# Enable URL rewriting engine
+
+RewriteEngine On
+
+# Ensure default character set is UTF-8
+
+AddDefaultCharset UTF-8
+
+# ------------------------------------------------------------------------------
+
+# | Force HTTPS                                                                |
+
+# ------------------------------------------------------------------------------
+
+# Redirects all HTTP traffic to HTTPS, enforcing secure connections
+
+# This check is important as it ensures that the redirect to HTTPS happens only
+
+# if the connection is not already secure, preventing an infinite redirect loop
+
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ------------------------------------------------------------------------------
+
+# | WWW Handling                                                               |
+
+# ------------------------------------------------------------------------------
+
+# Choose one: force WWW or force non-WWW. Uncomment the preferred section
+
+# # Force WWW: Redirect non-WWW to WWW
+
+# RewriteCond %{HTTP_HOST} !^www\. [NC]
+
+# RewriteRule ^(.*)$ <https://www.%{HTTP_HOST}%{REQUEST_URI}> [L,R=301]
+
+# Force non-WWW: Redirect WWW to non-WWW (Recommended for simplicity)
+
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1%{REQUEST_URI} [L,R=301]
+
+# ------------------------------------------------------------------------------
+
+# | URL Rewrite Rules & SEO-friendly URL Handling                              |
+
+# ------------------------------------------------------------------------------
+
+# Route index.html to the root domain (`/`) so visitors see content at "/"
+
+# and handle direct access to `/index.html`
+
+# If the request is for "/" or "/index.html" (or any variation like /Index.html)
+
+# Silently rewrite RewriteRule `^/?(index\.html)?$` to `index.html`
+
+# This allows access via '/' and '/index.html' while internally serving index.html
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^/?(index\.html)?$ index.html [L,NC]
+
+# ------------------------------------------------------------------------------
+
+# | Security Headers                                                           |
+
+# ------------------------------------------------------------------------------
+
+# Enhance security by setting various HTTP headers
+
+# X-Frame-Options: Prevents clickjacking attacks by controlling if the page can
+
+# be displayed in an iframe. DENY means no framing is allowed
+
+Header always append X-Frame-Options DENY
+
+# X-Content-Type-Options: Prevents MIME-sniffing attacks, forcing the browser
+
+# to use the declared content-type
+
+Header always append X-Content-Type-Options nosniff
+
+# X-XSS-Protection: Activates the browser's XSS filter
+
+# "1; mode=block" means enable filtering and block the page if an XSS attack is detected
+
+Header always append X-XSS-Protection "1; mode=block"
+
+# Referrer-Policy: Controls how much referrer information is sent with requests
+
+# "no-referrer-when-downgrade" sends the origin, path, and query string for
+
+# same-protocol requests and no referrer for less secure connections (HTTP to HTTPS)
+
+Header always append Referrer-Policy "no-referrer-when-downgrade"
+
+# Content-Security-Policy: A powerful header to mitigate various types of attacks
+
+# including Cross Site Scripting (XSS) and data injection attacks
+
+# This example is a very strict policy. Adjust as needed for your assets
+
+# script-src 'self': Only allow scripts from the same origin
+
+# style-src 'self': Only allow styles from the same origin
+
+# img-src 'self' data:: Only allow images from the same origin and data URIs
+
+# font-src 'self': Only allow fonts from the same origin
+
+# Default-src 'self': Fallback policy for other resource types
+
+# Note: For SVG favicons, if served from a different domain/CDN or via data URI
+
+# ensure img-src or default-src allows it
+
+# This project's favicon.svg is local, so 'self' is sufficient
+
+# Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self';"
+
+# ------------------------------------------------------------------------------
+
+# | Performance Optimization: Cache Control                                    |
+
+# ------------------------------------------------------------------------------
+
+# Configure browser caching for static assets to improve load times
+
+# Enable Expires Headers
+
+ExpiresActive On
+
+# Default expiration: 1 hour for unspecified types
+
+ExpiresDefault "access plus 1 hour"
+
+# Media: 1 month (images, audio, video)
+
+ExpiresByType image/jpg "access plus 1 month"
+ExpiresByType image/jpeg "access plus 1 month"
+ExpiresByType image/gif "access plus 1 month"
+ExpiresByType image/png "access plus 1 month"
+ExpiresByType image/svg+xml "access plus 1 month" # Favicon.svg caching
+ExpiresByType video/ogg "access plus 1 month"
+ExpiresByType audio/ogg "access plus 1 month"
+ExpiresByType video/mp4 "access plus 1 month"
+ExpiresByType video/webm "access plus 1 month"
+
+# CSS and JavaScript: 1 week (consider longer for versioned assets)
+
+ExpiresByType text/css "access plus 1 week"
+ExpiresByType application/javascript "access plus 1 week"
+ExpiresByType application/x-javascript "access plus 1 week"
+
+# Other static files: 1 week
+
+ExpiresByType application/pdf "access plus 1 week"
+ExpiresByType application/json "access plus 1 week"
+
+# Use FileETag for content validation, but consider disabling for CDNs
+
+FileETag MTime Sizes
+
+# ------------------------------------------------------------------------------
+
+# | Performance Optimization: Compression (GZIP)                               |
+
+# ------------------------------------------------------------------------------
+
+# Enable GZIP compression for text-based content to reduce bandwidth
+
+# Check if mod_deflate is available
+
+<IfModule mod_deflate.c>
+    # Compress text, HTML, JavaScript, CSS, XML, etc.
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+
+    # Don't compress images, audio, video (they are already compressed)
+    SetEnvIfNoCase Request_URI \
+    \.(?:gif|jpe?g|png|mp4|webm|ogg|pdf|woff2|woff|ttf|eot|gz|tgz|zip|bz2|tar|rar)$ no-gzip dont-vary
+
+    # Ensure proxies do not deliver the wrong content to browsers that do not support compression
+    Header append Vary Accept-Encoding
+</IfModule>
+
+# ------------------------------------------------------------------------------
+
+# | Error Handling                                                             |
+
+# ------------------------------------------------------------------------------
+
+# Custom error pages for a better user experience. Ensure these paths exist
+
+ErrorDocument 400 /400.html
+ErrorDocument 401 /401.html
+ErrorDocument 403 /403.html
+ErrorDocument 404 /404.html
+ErrorDocument 500 /500.html
+
+# ------------------------------------------------------------------------------
+
+# | File Protection                                                            |
+
+# ------------------------------------------------------------------------------
+
+# Prevent access to sensitive files or file types
+
+# Deny access to .htaccess files themselves
+
+<Files ~ "^\.ht">
+    Order allow,deny
+    Deny from all
+    Satisfy All
+</Files>
+
+# Deny access to common sensitive files (e.g., config files, backup files)
+
+<FilesMatch "\.(bak|inc|lib|log|sh|sql|json|yml|yaml|md|DS_Store)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Example: Deny access to any file named 'config.php' or potentially sensitive backups
+
+# <FilesMatch "(^|\.)(config|Config|settings|Settings)\.(php|inc|yml|yaml|json|txt|bak|old|orig)$">
+
+# Order allow,deny
+
+# Deny from all
+
+# </FilesMatch>
+
+# ------------------------------------------------------------------------------
+
+# | Favicon Handling                                                           |
+
+# ------------------------------------------------------------------------------
+
+# Ensure favicon.svg is properly served and cached
+
+# Caching headers for SVG are already handled by ExpiresByType
+
+# No special rewrite needed if it's directly in the root and linked in HTML

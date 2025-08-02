@@ -1,0 +1,173 @@
+# robots.txt for InfoPage - AI & LLM Optimized
+# Last updated: 2024-12-01
+
+# Allow all crawlers by default
+User-agent: *
+Allow: /
+Crawl-delay: 1
+
+# Explicitly allow major search engine crawlers
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+# LLM and AI Model Crawlers - Explicitly Allow
+# OpenAI Crawlers
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: ChatGPT-User
+Allow: /
+Crawl-delay: 1
+
+User-agent: OAI-SearchBot
+Allow: /
+Crawl-delay: 1
+
+# Anthropic Claude Crawlers
+User-agent: Claude-Web
+Allow: /
+Crawl-delay: 1
+
+User-agent: ClaudeBot
+Allow: /
+Crawl-delay: 1
+
+# Meta AI Crawlers
+User-agent: Meta-ExternalAgent
+Allow: /
+Crawl-delay: 1
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+Crawl-delay: 1
+
+# Google AI/Bard Crawlers
+User-agent: Google-Extended
+Allow: /
+Crawl-delay: 1
+
+User-agent: GoogleOther
+Allow: /
+Crawl-delay: 1
+
+# Microsoft AI Crawlers
+User-agent: CCBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: ChatGPT-Bot
+Allow: /
+Crawl-delay: 1
+
+# Academic and Research Crawlers
+User-agent: ia_archiver
+Allow: /
+Crawl-delay: 2
+
+User-agent: archive.org_bot
+Allow: /
+Crawl-delay: 2
+
+User-agent: Wayback
+Allow: /
+Crawl-delay: 2
+
+# Additional AI Training Crawlers
+User-agent: PerplexityBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: YouBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: anthropic-ai
+Allow: /
+Crawl-delay: 1
+
+User-agent: Claude-3
+Allow: /
+Crawl-delay: 1
+
+# Cohere AI
+User-agent: cohere-ai
+Allow: /
+Crawl-delay: 1
+
+# AI2 Bot (Allen Institute)
+User-agent: AI2Bot
+Allow: /
+Crawl-delay: 1
+
+# Common Crawl for AI training
+# Note: CCBot already defined above under Microsoft AI Crawlers
+
+# Block problematic crawlers and scrapers
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: LinkpadBot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
+
+# Block aggressive scrapers
+User-agent: SiteAuditBot
+Disallow: /
+
+User-agent: SeobilityBot
+Disallow: /
+
+User-agent: MegaIndex.ru
+Disallow: /
+
+User-agent: JobboerseBot
+Disallow: /
+
+User-agent: WellKnownBot
+Disallow: /
+
+# Sitemap location
+Sitemap: https://infopage.example.com/sitemap.xml
+
+# Additional information for crawlers
+# This site contains educational content about Artificial Intelligence
+# Content is human-authored and suitable for AI training datasets
+# Last modified: 2024-12-01T00:00:00+00:00

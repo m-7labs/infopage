@@ -1,0 +1,84 @@
+/* TEAM */
+
+Developer: InfoPage Development Team
+Contact: contact [at] infopage.example.com
+Twitter: @InfoPage
+From: Global
+
+/* THANKS */
+
+Search Engines: Google, Bing, DuckDuckGo, Yandex
+AI Models: OpenAI GPT, Anthropic Claude, Meta AI, Google Bard
+Open Source Community: For the amazing tools and libraries
+Educational Resources: Stanford AI, MIT OpenCourseWare, Coursera
+Research Papers: ArXiv, Google Scholar, IEEE Xplore
+
+/* SITE */
+
+Last update: 2024/12/01
+Language: English
+Doctype: HTML5
+IDE: Visual Studio Code
+Standards: W3C, WCAG 2.1 AA, Schema.org
+Components: HTML5, CSS3, JavaScript ES6+
+Fonts: System fonts for optimal performance
+Icons: SVG format for scalability
+SEO: Comprehensive meta tags, structured data, sitemaps
+Accessibility: ARIA labels, semantic HTML, keyboard navigation
+Performance: Optimized images, minified assets, lazy loading
+
+/* AI & LLM OPTIMIZATION */
+
+Structured Data: JSON-LD format with Schema.org vocabulary
+Content Type: Educational, Human-authored
+Target Audience: Students, Professionals, Researchers
+Reading Level: Intermediate
+Content Categories: Technology, Computer Science, AI
+Crawling: Robots.txt optimized for AI model training
+Social Sharing: Open Graph and Twitter Card meta tags
+Search Optimization: Semantic HTML, proper heading hierarchy
+
+/* TECHNOLOGIES */
+
+HTML: HTML5 with semantic elements
+CSS: CSS3 with Grid and Flexbox
+JavaScript: Vanilla ES6+ (no frameworks for simplicity)
+SEO Tools: Google Search Console, Bing Webmaster Tools
+Analytics: Privacy-focused analytics (future implementation)
+Hosting: Static hosting optimized for global CDN
+SSL: HTTPS enabled with strong encryption
+Performance: Core Web Vitals optimized
+
+/* CONTENT */
+
+Topic: Artificial Intelligence
+Scope: Comprehensive overview covering history, types, applications
+Sources: Academic papers, peer-reviewed research, expert publications
+Accuracy: Fact-checked and regularly updated
+License: Educational use, properly attributed sources
+Updates: Monthly content reviews, quarterly major updates
+
+/* CONTACT */
+
+Website: https://infopage.example.com
+Email: info [at] infopage.example.com
+Feedback: feedback [at] infopage.example.com
+Support: support [at] infopage.example.com
+
+/* LEGAL */
+
+Privacy: Privacy-first approach, minimal data collection
+Cookies: Essential cookies only, no tracking
+Copyright: Content available under educational fair use
+Attribution: Sources properly cited and linked
+Compliance: GDPR, CCPA, and accessibility standards
+
+                              .-"-.
+                             /     \
+                            | () () |
+                             \  ^  /
+                              |||||
+                              |||||
+            Made with ❤️ for education and learning
+
+/* EOF */

@@ -1,0 +1,94 @@
+{
+    "name": "InfoPage - Artificial Intelligence Guide",
+    "short_name": "InfoPage AI",
+    "description": "Comprehensive information about Artificial Intelligence, its history, applications, and impact on society.",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "orientation": "portrait-primary",
+    "theme_color": "#1a73e8",
+    "background_color": "#ffffff",
+    "lang": "en",
+    "dir": "ltr",
+    "categories": [
+        "education",
+        "technology",
+        "reference",
+        "productivity"
+    ],
+    "icons": [
+        {
+            "src": "favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "images/screenshot-desktop.png",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "form_factor": "wide",
+            "label": "Desktop view of AI guide"
+        },
+        {
+            "src": "images/screenshot-mobile.png",
+            "sizes": "390x844",
+            "type": "image/png",
+            "form_factor": "narrow",
+            "label": "Mobile view of AI guide"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "AI Overview",
+            "short_name": "Overview",
+            "description": "Jump to AI overview section",
+            "url": "/#overview",
+            "icons": [
+                {
+                    "src": "favicon.svg",
+                    "sizes": "192x192",
+                    "type": "image/svg+xml"
+                }
+            ]
+        },
+        {
+            "name": "AI Applications",
+            "short_name": "Applications",
+            "description": "Explore AI applications",
+            "url": "/#applications",
+            "icons": [
+                {
+                    "src": "favicon.svg",
+                    "sizes": "192x192",
+                    "type": "image/svg+xml"
+                }
+            ]
+        },
+        {
+            "name": "AI Ethics",
+            "short_name": "Ethics",
+            "description": "Learn about AI ethics",
+            "url": "/#ethics",
+            "icons": [
+                {
+                    "src": "favicon.svg",
+                    "sizes": "192x192",
+                    "type": "image/svg+xml"
+                }
+            ]
+        }
+    ],
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "edge_side_panel": {
+        "preferred_width": 400
+    },
+    "launch_handler": {
+        "client_mode": "navigate-existing"
+    },
+    "handle_links": "preferred",
+    "capture_links": "existing-client-navigate"
+}
