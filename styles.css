@@ -66,17 +66,17 @@ p {
 
 /* Links */
 a {
-    color: #2ECC71;
+    color: #cc5500;
     text-decoration: none;
 }
 
 a:hover {
     text-decoration: underline;
-    color: #27AE60;
+    color: #b8470f;
 }
 
 a:visited {
-    color: #229954;
+    color: #a03e0c;
 }
 
 /* Lists */
@@ -114,13 +114,13 @@ li {
 }
 
 .logo-link {
-    color: #2ECC71 !important;
+    color: #cc5500 !important;
     font-weight: bold;
     text-decoration: none;
 }
 
 .logo-link:hover {
-    color: #27AE60 !important;
+    color: #b8470f !important;
 }
 
 .main-nav .nav-list {
@@ -131,7 +131,7 @@ li {
 }
 
 .nav-link {
-    color: #2ECC71;
+    color: #cc5500;
     font-weight: 500;
     padding: 0.5em 0.75em;
     border-radius: 3px;
@@ -141,7 +141,7 @@ li {
 .nav-link:hover {
     background-color: #eaecf0;
     text-decoration: none;
-    color: #27AE60;
+    color: #b8470f;
 }
 
 /* Page Container - Single Column Layout */
@@ -200,7 +200,7 @@ li {
 .stat-number {
     font-size: 2.5em;
     font-weight: bold;
-    color: #2ECC71;
+    color: #cc5500;
 }
 
 .stat-description {
@@ -242,7 +242,7 @@ li {
     font-size: 1em;
     font-weight: bold;
     margin-bottom: 0.75em;
-    color: #2ECC71;
+    color: #cc5500;
     border-bottom: 1px solid #eaecf0;
     padding-bottom: 0.5em;
 }
@@ -262,7 +262,7 @@ li {
 .related-links a {
     display: block;
     padding: 0.4em 0;
-    color: #2ECC71;
+    color: #cc5500;
     font-size: 0.9em;
     transition: all 0.2s ease;
 }
@@ -272,7 +272,7 @@ li {
     background-color: #eaecf0;
     padding-left: 0.75em;
     text-decoration: none;
-    color: #27AE60;
+    color: #b8470f;
 }
 
 /* Main Content */
@@ -301,7 +301,7 @@ li {
     font-size: 1.2em;
     margin-bottom: 0.75em;
     border: none;
-    color: #2ECC71;
+    color: #cc5500;
 }
 
 .toc-list {
@@ -317,7 +317,7 @@ li {
 
 .toc-list a,
 .toc-sublist a {
-    color: #2ECC71;
+    color: #cc5500;
     font-size: 0.9em;
 }
 
@@ -352,7 +352,7 @@ li {
 }
 
 .infobox-header {
-    background: linear-gradient(135deg, #2ECC71 0%, #27AE60 100%);
+    background: linear-gradient(135deg, #cc5500 0%, #b8470f 100%);
     color: white;
     padding: 1rem;
     text-align: center;
@@ -398,7 +398,7 @@ li {
 .infobox-label {
     font-weight: bold;
     width: 40%;
-    color: #2ECC71;
+    color: #cc5500;
 }
 
 .infobox-value {
@@ -410,14 +410,14 @@ li {
 /* Quick Facts Callout */
 .quick-facts-callout {
     background-color: #f8f9fa;
-    border-left: 4px solid #2ECC71;
+    border-left: 4px solid #cc5500;
     border-radius: 0 6px 6px 0;
     padding: 1.5rem;
     margin: 2rem 0;
 }
 
 .quick-facts-callout h3 {
-    color: #2ECC71;
+    color: #cc5500;
     margin-bottom: 1rem;
     font-size: 1.2em;
 }
@@ -440,7 +440,7 @@ li {
 
 .fact-list li:before {
     content: "•";
-    color: #2ECC71;
+    color: #cc5500;
     font-size: 1.4em;
     position: absolute;
     left: 0;
@@ -461,13 +461,13 @@ li {
     margin-bottom: 1em;
     padding: 1rem;
     background-color: #f8f9fa;
-    border-left: 4px solid #2ECC71;
+    border-left: 4px solid #cc5500;
     border-radius: 0 6px 6px 0;
 }
 
 .timeline-year {
     font-weight: bold;
-    color: #2ECC71;
+    color: #cc5500;
     width: 70px;
     flex-shrink: 0;
 }
@@ -497,11 +497,11 @@ li {
 .application-item:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(46, 204, 113, 0.15);
-    border-color: #2ECC71;
+    border-color: #cc5500;
 }
 
 .application-item h4 {
-    color: #2ECC71;
+    color: #cc5500;
     margin-bottom: 0.75em;
     font-size: 1.2em;
 }
@@ -513,7 +513,7 @@ li {
 /* Ethics List */
 .ethics-list {
     background-color: #f8f9fa;
-    border-left: 4px solid #2ECC71;
+    border-left: 4px solid #cc5500;
     padding: 1.5rem 1.5rem 1.5rem 2rem;
     margin: 1.5em 0;
     border-radius: 0 6px 6px 0;
@@ -525,7 +525,7 @@ li {
 }
 
 .ethics-list strong {
-    color: #2ECC71;
+    color: #cc5500;
 }
 
 /* References */
@@ -557,7 +557,7 @@ li {
 }
 
 .footer-section h4 {
-    color: #2ECC71;
+    color: #cc5500;
     margin-bottom: 1em;
     font-size: 1.1em;
 }
@@ -572,7 +572,7 @@ li {
 }
 
 .footer-links a {
-    color: #2ECC71;
+    color: #cc5500;
     font-size: 0.9em;
 }
 
@@ -767,7 +767,7 @@ li {
 /* Focus styles for keyboard navigation */
 a:focus,
 button:focus {
-    outline: 2px solid #2ECC71;
+    outline: 2px solid #cc5500;
     outline-offset: 2px;
 }
 
