@@ -273,47 +273,6 @@
         <section class="article-section">
             <main class="main-content">
                 <article class="article">
-                    <!-- Side-by-side TOC and Infobox Container -->
-                    <div class="toc-infobox-container">
-                        <!-- Dynamic Table of Contents - Auto-populated -->
-                        <div class="table-of-contents">
-                            <h2>Contents</h2>
-                            <ol class="toc-list" id="dynamic-toc">
-                                <!-- TOC will be auto-generated from headings via JavaScript -->
-                            </ol>
-                        </div>
-
-                        <!-- Integrated Infobox as standalone section -->
-                        <div class="infobox-section">
-                            <div class="infobox">
-                                <div class="infobox-header">
-                                    <h3>Artificial Intelligence</h3>
-                                </div>
-                                <div class="infobox-image">
-                                    <div class="placeholder-image">AI Concept Image</div>
-                                </div>
-                                <div class="infobox-content">
-                                    <div class="infobox-row">
-                                        <span class="infobox-label">Type</span>
-                                        <span class="infobox-value">Computer Science Field</span>
-                                    </div>
-                                    <div class="infobox-row">
-                                        <span class="infobox-label">Founded</span>
-                                        <span class="infobox-value">1956</span>
-                                    </div>
-                                    <div class="infobox-row">
-                                        <span class="infobox-label">Key Pioneers</span>
-                                        <span class="infobox-value">John McCarthy, Alan Turing, Marvin Minsky</span>
-                                    </div>
-                                    <div class="infobox-row">
-                                        <span class="infobox-label">Subfields</span>
-                                        <span class="infobox-value">Machine Learning, Computer Vision, NLP,
-                                            Robotics</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
                     <!-- Unified AI Content Section -->
                     <section id="ai-comprehensive-guide" class="article-section">
@@ -360,60 +319,6 @@
         </div>
     </footer>
 
-    <!-- JavaScript for Dynamic Table of Contents -->
-    <script>
-        // Auto-generate Table of Contents from headings
-        function generateTableOfContents() {
-            const tocList = document.getElementById('dynamic-toc');
-            const headings = document.querySelectorAll('h2, h3, h4, h5, h6');
-
-            if (!tocList || headings.length === 0) return;
-
-            // Clear existing TOC content
-            tocList.innerHTML = '';
-
-            headings.forEach((heading, index) => {
-                // Skip TOC heading itself and infobox headings
-                if (heading.textContent === 'Contents' ||
-                    heading.closest('.infobox') ||
-                    heading.closest('.quick-facts-callout')) {
-                    return;
-                }
-
-                // Create unique ID if not exists
-                if (!heading.id) {
-                    heading.id = heading.textContent
-                        .toLowerCase()
-                        .replace(/[^\w\s-]/g, '') // Remove special characters
-                        .replace(/\s+/g, '-')     // Replace spaces with hyphens
-                        .replace(/--+/g, '-')     // Replace multiple hyphens with single
-                        .trim();
-                }
-
-                // Create list item
-                const listItem = document.createElement('li');
-                listItem.className = `toc-level-${heading.tagName.toLowerCase()}`;
-
-                // Create link
-                const link = document.createElement('a');
-                link.href = `#${heading.id}`;
-                link.textContent = heading.textContent;
-                link.onclick = function (e) {
-                    e.preventDefault();
-                    document.getElementById(heading.id).scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                };
-
-                listItem.appendChild(link);
-                tocList.appendChild(listItem);
-            });
-        }
-
-        // Generate TOC when page loads
-        document.addEventListener('DOMContentLoaded', generateTableOfContents);
-    </script>
 </body>
 
 </html>
