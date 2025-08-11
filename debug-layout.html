@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Debug Test</title>
+    <style>
+        /* Debug styles to highlight layout issues */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Current problematic grid layout */
+        .current-grid {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 2rem;
+            background: lightblue;
+            padding: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .sidebar {
+            background: pink;
+            padding: 1rem;
+        }
+
+        .content {
+            background: lightgreen;
+            padding: 1rem;
+        }
+
+        /* Proposed simplified layout */
+        .simplified-layout {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1rem;
+            background: lightyellow;
+        }
+
+        .debug-info {
+            background: #f0f0f0;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-left: 4px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="debug-info">
+        <h2>🐛 Layout Debug Analysis</h2>
+        <p><strong>Issue 1:</strong> Grid layout creates unwanted sidebar</p>
+        <p><strong>Issue 2:</strong> Navigation bars add complexity</p>
+    </div>
+
+    <h3>Current Layout (Problematic):</h3>
+    <div class="current-grid">
+        <div class="sidebar">
+            <h4>Sidebar Navigation</h4>
+            <p>This 250px sidebar is the problem!</p>
+            <ul>
+                <li>Navigation links</li>
+                <li>Related topics</li>
+            </ul>
+        </div>
+        <div class="content">
+            <h4>Main Content</h4>
+            <p>Content is forced into narrow column</p>
+            <p>Grid template: 250px 1fr</p>
+        </div>
+    </div>
+
+    <h3>Proposed Simplified Layout:</h3>
+    <div class="simplified-layout">
+        <h4>Clean Single Column</h4>
+        <p>Full width content, no sidebars</p>
+        <p>TOC auto-generated from headings</p>
+        <p>No navigation bars</p>
+    </div>
+</body>
+
+</html>
